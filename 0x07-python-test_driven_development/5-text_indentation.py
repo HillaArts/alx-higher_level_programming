@@ -33,5 +33,14 @@ def text_indentation(text):
             formatted_text += "\n\n"
 
     # Split the formatted text into lines and print each line without leading or trailing spaces
-    for line in formatted_text.split('\n'):
-        print(line.strip())
+    lines = formatted_text.split('\n')
+    for i, line in enumerate(lines):
+        if line.strip():  # Check if line has non-whitespace characters
+            print(line.strip(), end='')
+            if i < len(lines) - 1 and lines[i + 1].strip() and lines[i + 1][0] in split_characters:
+                print()  # Print a newline only if the next line starts with a split character
+        else:
+            if i < len(lines) - 1 and lines[i + 1].strip() and lines[i + 1][0] in split_characters:
+                print()  # Print a newline only if the next line starts with a split character
+            else:
+                pass  # Do not print anything if the line is blank and not followed by a split character
