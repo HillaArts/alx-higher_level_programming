@@ -1,0 +1,26 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Testing text_indentation function with different texts
+
+>>> text = "Hello. How are you? This is a test: This is a text."
+>>> text_indentation(text)
+Hello
+How are you
+
+This is a test
+This is a text
+
+>>> text = "This is a simple test."
+>>> text_indentation(text)
+This is a simple test
+
+# Testing text_indentation function with invalid inputs
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("This is invalid .: text")
+This is invalid
+: text
