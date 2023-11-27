@@ -25,4 +25,3 @@ TypeError: b must be an integer or float
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer or float
-
