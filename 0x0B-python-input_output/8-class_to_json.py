@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Documentation for a class_to_json function"""
+"""
+    class_to_json()
+"""
 
-def class_to_json (obj):
-    """Returns a dictionary representation of an object for JSON serializing
-    
-    Args: 
-        obj (class object): the object to be serialized
+
+def class_to_json(obj):
+    """
+        it returns the dictionary description with a simple data structure.
     """
     return obj.__dict__
