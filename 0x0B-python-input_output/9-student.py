@@ -1,33 +1,30 @@
 #!/usr/bin/python3
 """
-Student class
-
-Author: Lauren Mugabo Inkingi
+    9-student: Module for Student class
 """
 
-class Student:
 
-    """The student class"""
+class Student:
+    """
+    Defines a student by first_name, last_name, and age.
+    """
 
     def __init__(self, first_name, last_name, age):
-        """Instantitation function for students class
-        
-        Args: 
-            first_name (str): the first name of the student 
-            last_name (str): the last name of the student 
-            age (int): the age of the student
         """
-
+        Initializes a Student instance with first_name, last_name, and age.
+        Args:
+            first_name (str): The first name of the student.
+            last_name (str): The last name of the student.
+            age (int): The age of the student.
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
-        def to_json(self):
-        """Returns a dictionary representation of the instance
-        
-        Returns:
-            dictionary representation of the instance
+    def to_json(self):
         """
-
+        Retrieves a dictionary representation of a Student instance.
+        Returns:
+            dict: A dictionary containing the attributes of the Student.
+        """
         return self.__dict__
-    
