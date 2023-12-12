@@ -3,6 +3,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class that inherits from Rectangle."""
 
@@ -42,6 +43,7 @@ class Square(Rectangle):
             'x': self.x,
             'y': self.y
         }
+
 
 if __name__ == "__main__":
     s1 = Square(10, 2, 1)
