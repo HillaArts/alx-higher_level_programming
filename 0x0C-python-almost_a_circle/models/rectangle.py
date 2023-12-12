@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Rectangle class that inherits from Base."""
 
@@ -104,6 +105,7 @@ class Rectangle(Base):
             'x': self.x,
             'y': self.y
         }
+
 
 if __name__ == "__main__":
     r1 = Rectangle(10, 2, 1, 9)
