@@ -3,6 +3,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Square class that inherits from Rectangle."""
 
@@ -53,6 +54,7 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if key in attributes:
                     setattr(self, key, value)
+
 
 if __name__ == "__main__":
     s1 = Square(5)
