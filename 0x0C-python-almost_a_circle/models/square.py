@@ -3,7 +3,6 @@
 
 from models.rectangle import Rectangle
 
-
 class Square(Rectangle):
     """Square class that inherits from Rectangle."""
 
@@ -44,16 +43,38 @@ class Square(Rectangle):
             'y': self.y
         }
 
+    def update(self, *args, **kwargs):
+        """Update attributes with provided arguments."""
+        attributes = ['id', 'size', 'x', 'y']
+        if args:
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
 
 if __name__ == "__main__":
-    s1 = Square(10, 2, 1)
+    s1 = Square(5)
     print(s1)
-    s1_dictionary = s1.to_dictionary()
-    print(s1_dictionary)
-    print(type(s1_dictionary))
 
-    s2 = Square(1, 1)
-    print(s2)
-    s2.update(**s1_dictionary)
-    print(s2)
-    print(s1 == s2)
+    s1.update(10)
+    print(s1)
+
+    s1.update(1, 2)
+    print(s1)
+
+    s1.update(1, 2, 3)
+    print(s1)
+
+    s1.update(1, 2, 3, 4)
+    print(s1)
+
+    s1.update(x=12)
+    print(s1)
+
+    s1.update(size=7, y=1)
+    print(s1)
+
+    s1.update(size=7, id=89, y=1)
+    print(s1)
