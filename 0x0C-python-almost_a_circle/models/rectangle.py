@@ -31,10 +31,6 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width."""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -45,10 +41,6 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter for height."""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -59,10 +51,6 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x."""
-        if not isinstance(value, int):
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -73,56 +61,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y."""
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
         self.__y = value
-
-    def area(self):
-        """Calculate and return the area of the rectangle."""
-        return self.width * self.height
-
-    def display(self):
-        """Display the rectangle with the character '#'."""
-        for _ in range(self.y):
-            print()
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
-
-    def __str__(self):
-        """Override the __str__ method."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height
-        )
-
-    def update(self, *args, **kwargs):
-        """Update attributes with provided arguments."""
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        if args:
-            for i, arg in enumerate(args):
-                setattr(self, attributes[i], arg)
-        else:
-            for key, value in kwargs.items():
-                if key in attributes:
-                    setattr(self, key, value)
 
 
 if __name__ == "__main__":
-    r1 = Rectangle(10, 10, 10, 10)
-    print(r1)
+    r1 = Rectangle(10, 2)
+    print(r1.id)
 
-    r1.update(id=89)
-    print(r1)
+    r2 = Rectangle(2, 10)
+    print(r2.id)
 
-    r1.update(width=2)
-    print(r1)
-
-    r1.update(id=89, width=2, height=3)
-    print(r1)
-
-    r1.update(id=89, width=2, height=3, x=4)
-    print(r1)
-
-    r1.update(id=89, width=2, height=3, x=4, y=5)
-    print(r1)
+    r3 = Rectangle(10, 2, 0, 0, 12)
+    print(r3.id)
